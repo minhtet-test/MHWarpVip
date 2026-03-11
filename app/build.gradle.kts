@@ -27,7 +27,10 @@ android {
 }
 
 dependencies {
-    implementation(files("libs/wgwrapper.aar")) // Go AAR ချိတ်ခြင်း
+    // ဤစာကြောင်းသည် app/libs/ ထဲက aar အားလုံးကို ဖတ်ခိုင်းခြင်းဖြစ်သည်
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.aar"))))
+    
+    // ကျန်တာတွေက အရင်အတိုင်း...
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
